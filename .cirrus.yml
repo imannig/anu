@@ -1,7 +1,7 @@
 env:
     rcloneconfig: "ENCRYPTED[8051df642acc633b040a4631589408aa4338bb68da675bcdd77d7bf2ab7b6d7ccd3be22a755009b992d3b2fd26a93a8d]"
-    anu: "ENCRYPTED[f9aa3070d1fafb13e576840465991c2b79b3089777fd43a9872db6a05c9e2ca77f37432a4e1bd9bfdb6ca735ed973333]"
-    lunch: lunch lineage_j7xelte-userdebug
+    anu: "ENCRYPTED[71fb92648bee5cedde922ec534cc8d1ddb8b828ed378ad06ff63b0857fe151213de3bb35b497f7b1164e7457acd27eb5]"
+    lunch: lunch lineage_on7xelte-userdebug
     make: make bacon
 task:
   name: "Setting Up, Syncing, Building and Uploading..."
@@ -16,6 +16,9 @@ task:
        - echo "$rcloneconfig" > ~/.rclone.conf
        - git config --global user.name "imannig"
        - git config --global user.email "akugedekntl@gmail.com"
+       - echo "$anu" > ~/.git-credentials
+       - git config --global credential.helper store --file=~/.git-credentials
+       - mkdir -p ~/ccache
        - rclone copy cirrus:crdroid-q/ccache.tar.gz ~/ -P
        - cd ~/
        - time tar xf ccache.tar.gz
