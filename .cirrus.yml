@@ -19,7 +19,7 @@ task:
        - echo "$anu" > ~/.git-credentials
        - git config --global credential.helper store --file=~/.git-credentials
        - mkdir -p ~/ccache
-       - rclone copy cirrus:crdroid-q/ccache.tar.gz ~/ -P
+       - rclone copy cirrus:aex-q/ccache.tar.gz ~/ -P
        - cd ~/
        - time tar xf ccache.tar.gz
        - cd ~/
@@ -60,6 +60,6 @@ task:
       - ./ziping.sh
       - cd ~/
      # - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Uploading ccache...."
-      - rclone copy ccache.tar.gz cirrus:crdroid-q -P
+      - rclone copy ccache.tar.gz cirrus:aex-q -P
       - echo " "
      # - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Uploadinig Ccahchhe Successyffully!"
