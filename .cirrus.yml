@@ -39,7 +39,8 @@ task:
       - cd ~/rom
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/AospExtended/manifest.git -b 10.x -g default,-mips,-darwin,-notdefault
       - git clone https://github.com/imannig/local_manifest -b aex .repo/local_manifests
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8    
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 30 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
+      - rm -rf hardware/lineage/livedisplay    
       - echo "============================"
       - echo "Sync Completed!"
       - echo "============================"
